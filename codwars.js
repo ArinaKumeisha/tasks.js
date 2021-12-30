@@ -133,13 +133,28 @@ console.log(myLanguages({"Java": 10, "Ruby": 80, "Python": 65}))
 //Напишите функцию makeItFunny(), которая принимает на вход строку и возвращает её копию,
 // у которой каждый n-ный элемент переведен в верхний регистр. n – задается на входе в функцию.
 // Для определения каждого n-ного элемента понадобится остаток от деления %. Подумайте, как его можно использовать.
+
 const makeItFunny = (text, num) => {
     return text.split('').map((t, i) => (i + 1) === num ? t.toUpperCase() : t).join('')
 }
 console.log(makeItFunny('arina', 3))
+
 
 //Напишите функцию, которая принимает фразу и возвращает самое короткое слово
 const func = (str) => {
     return str.split(' ').sort((a, b) => a.length - b.length)[0]
 }
 
+//Напишите функцию, которая на входе будет принимать ФИО, а на выходе возвращать инициалы с большой буквы
+
+const name = (str) => {
+    return str.split(' ').map(s=> s[0].toUpperCase()).join(' ')
+}
+console.log(name('arina kumeisha nozdracheva'))
+
+
+//Напишите функцию , которая принимает число и возвращает сумму его цифр, даже если оно отрицательное
+const sum = (number) => {
+    return Math.abs(number).toString().split('').reduce((a,b) => {return + a+ + b},0)
+}
+console.log(sum(22))
